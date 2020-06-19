@@ -75,3 +75,15 @@ There are also two additional files:
 - `ddpg_agent.py`: implements DDPG using the model above.
 
 The models's weights are saved in files `model_actor.pt` and `model_critic.pt`.
+
+### DDPG Architecture
+
+The DDPG agent has two different neural network architectures, one for the actor and the other for the critic.
+
+The architecture for the actor is shown below:
+
+![Actor Architecture](img/actor_arch.png "Actor Architecture")
+
+The architecture for the critic is shown below:
+
+![Critic Architecture](img/critic_arch.png "Critic Architecture")
