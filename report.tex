@@ -89,7 +89,7 @@ The DDPG was then implemented with:
 \begin{itemize}
     \item \textbf{Experience replay buffer} to handle data correlation between consecutive samples.
     \item \textbf{Two neural networks} with identical architecture (local and target networks) for each actor and critic, as described in the following section (so there were 4 networks in total). \textbf{Soft update} was also implemented to updated each target network, instead of updating the whole network every n-th iteration.
-    \item \textbf{Ornstein–Uhlenbeck process} implemented to add noise to the actions, thus creating incentives to exploration. 
+    \item \textbf{Ornstein–Uhlenbeck process} implemented to add noise to the actions, thus creating incentives to exploration.
 \end{itemize}
 
 It is worth mentioning that the implementation was heavily based on previously implemented DDPG on the Nanodegree, but a few adjustments were made in the hyperparameters and in the code itself. The adjustments were:
@@ -112,7 +112,7 @@ BUFFER_SIZE = int(1e6)    # replay buffer size
 BATCH_SIZE = 1024         # minibatch size
 GAMMA = 0.975             # discount factor
 TAU = 1e-3                # for soft update of target parameters
-LR_ACTOR = 5e-4           # learning rate of the actor 
+LR_ACTOR = 5e-4           # learning rate of the actor
 LR_CRITIC = 1e-3          # learning rate of the critic
 WEIGHT_DECAY = 0          # L2 weight decay
 UPDATE_EVERY = 15         # how often to update the network
@@ -129,7 +129,7 @@ The architecture for the actor network is as follows:
 \label{fig:actor_arch}
 \end{figure}
 
-The architecture for the actor network is as follows:
+The architecture for the critic network is as follows:
 
 \begin{figure}[H]
 \centering
@@ -143,7 +143,7 @@ In the project notebook, there is a cell which executes a command that gives the
 
 The agent was able to solve the environment in only 102 episodes, and it took it about 70 minutes to train. All the details can be checked in the project notebook. It can be seen that the agent could learn quite well in early episodes and in a very stable way.
 
-The following image shows the individual episode score (in blue),the moving average of the last 100 episodes' scores (in orange), and the threshold of 30 for the moving average (in red), so that the environment is considered solved.
+The following image shows the individual episode score (in blue), the moving average of the last 100 episodes' scores (in orange), and the threshold of 30 for the moving average (in red), so that the environment is considered solved.
 
 \begin{figure}[H]
 \centering
